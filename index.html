@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+
+    <title>Where is my content? Geo-referencing content types in Plone with collective.geo</title>
+
+    <link rel="stylesheet" href="prettify/prettify.css">
+    <link rel="stylesheet" href="themes/base.css">
+    <link rel="stylesheet" href="themes/style.css">
+
+    <script src="deck.js/modernizr.custom.js"></script>
+  </head>
+  <body class="deck-container">
+
+    <!-- Begin slides -->
+    <section id="title-slide" class="slide">
+      <div class="container">
+        <h1>Where is my content?</h1>
+        <h3>Geo-referencing content types in Plone with collective.geo</h3>
+      </div>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide" id="whoami">
+      <h2>Who am I?</h2>
+
+      <p>
+        I'm senior developer and project manager with Abstract since 2011</p>
+      <p>I have been working with Plone since 2007</p>
+      <p>During the last years I have gained experience with various Python web development frameworks</p>
+
+      </p>
+      <aside class="presenter-notes">
+        Who am I, experience
+      </aside>
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Web maps: <small>when, why and how</small></h2>
+
+        <ol>
+        <li class="half slide">Complex and specialized GIS application</li>
+        <li class="half slide">Maps are the central part of the app
+          <ul>
+            <li>Panoramio</li>
+            <li>Foursquare</li>
+            <li>Only-apartments</li>
+          </ul>
+        <li class="half slide">Geo-referenced CMS</li>
+        </ol>
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>What is collective.geo</h2>
+        <div>
+          <p>
+            collective.geo is a package that allows to geo-reference
+            contents and to display them on a map</p>
+          </p>
+
+          <p class="reference-link">
+            <a href="http://plone.org/products/collective.geo">http://plone.org/products/collective.geo</a>
+          </p>
+        </div>
+
+        <div class="half slide">
+          <hr />
+          <p>In 2008 I faced two problems
+            <ul>
+              <li>learning Plone 3 and the Zope component architecture</li>
+              <li>put a lot of contents on a map</li>
+            </ul>
+          </p>
+        </div>
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="plone-products" class="slide">
+      <h2>What if c.geo was not there</h2>
+      <div class="left-50">
+        <h3>Plone products</h3>
+        <ul>
+          <li>Products.Maps</li>
+          <li>Products.ATGoogleMaps</li>
+          <li>redturtle.maps.core</li>
+          <li>raptus.article.map</li>
+        </ul>
+      </div>
+
+      <div class="right-50 half slide">
+        <div class="cons">
+          <h3>Cons</h3>
+          <ol>
+            <li>specific for Archetypes</li>
+            <li>can only georeference points</li>
+            <li>can only use Google Maps</li>
+            <li>developed for a specific project</li>
+          <ol>
+        </div>
+      </div>
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>collective.geo manifesto</h2>
+
+      <ul>
+        <li class="half slide"><h3>modular and easily extendable</h3></li>
+        <li class="half slide"><h3>up to date and taking advantage of ZCA</h3></li>
+        <li class="half slide"><h3>not related to a specific map service</h3></li>
+      </ul>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+
+    <section class="slide">
+      <h1>Use cases</h1>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+
+    <section class="slide">
+      <h2>Use the location field</h2>
+      <div class="left-40">
+        <h3>ENEA</h3>
+        <p>We can use the location field of a content-type to geo-locate the offices of a company</p>
+
+        <ul>
+          <li>Archetypes</li>
+          <li>collective.geo</li>
+        </ul>
+
+        <p class="reference-link">
+          <a href="http://www.enea.it">http://www.enea.it</a>
+        </p>
+
+      </div>
+
+      <div class="right-60">
+        <img src="./images/Dove-siamo-Enea.png" alt="ENEA webstie"/>
+      </div>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Dexterity content types TTW</h2>
+
+      <div class="left-50">
+        <h3>Tropical Data Hub</h3>
+        <p>We can assign <em>collective.geo Maps</em> behaviour to a Dexterity content-type in order to make it geo-referenceable</p>
+
+        <ul>
+          <li>Dexterity</li>
+          <li>collective.geo.behaviour</li>
+        </ul>
+
+        <p class="reference-link">
+          <a href="http://tropicaldatahub.org/">http://tropicaldatahub.org/</a>
+        </p>
+
+      </div>
+
+      <div class="right-50">
+        <img src="./images/Tropical-Data-Hub.png" alt="Tropical data hub webstie"/>
+      </div>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Not only points</h2>
+
+
+      <div class="left-40">
+        <h3>IW:LEARN</h3>
+        <p>c.geo allows to geo-reference content with different shapes
+          <ul>
+            <li>Points</li>
+            <li>Lines</li>
+            <li>Polygons</li>
+          </ul>
+
+        <p class="reference-link">
+          <a href="http://iwlearn.net/">http://iwlearn.net/</a>
+        </p>
+
+      </div>
+
+      <div class="right-60">
+        <img src="./images/IW_LEARN-1.png" alt="IW:LEARN webstie"/>
+      </div>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="flexitopic" class="slide">
+      <h2>Flexitopic</h2>
+
+      <div class="left-40">
+        <p>We can aggregate geo-referenced contents with a Plone collection and, with flexitopic, we can show the results on a table and paginate them
+        </p>
+        <ul>
+          <li>collective.flexitopic</li>
+          <li>c.geo.flexitopic</li>
+        </ul>
+
+      </div>
+
+      <div class="right-60">
+        <img src="./images/flexitopic.png" alt="Flexitopic"/>
+      </div>
+
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>More customizations</h2>
+
+      <div class="left-40 small-font">
+        <h3>AORIF</h3>
+
+        <p>The modular structure of collective.geo allows us to customize it in a simple way
+        </p>
+        <p>On saving a content we can geolocate its address and show it on a map. The user doesn't need to know the coordinates neither to use a complex UI.
+        </p>
+      </div>
+
+      <div class="right-60">
+        <img src="./images/aorif-plone.png" alt="Aorif"/>
+      </div>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+
+    <section class="slide">
+      <h2>Backend/frontend</h2>
+
+      <div class="left-40 small-font">
+
+        <p>We can use a different javascript map services to display contents.
+          <ul>
+            <li>Google maps</li>
+            <li>Polymaps <small><a href="http://polymaps.org/">http://polymaps.org/</a></small></li>
+            <li>Leaflet <small><a href="http://leaflet.cloudmade.com">http://leaflet.cloudmade.com</a></small></li>
+            <li>Kartograph <small><a href="http://kartograph.org">http://kartograph.org</a></small></li>
+          </ul>
+
+        </p>
+
+        <p class="reference-link">
+          <a href="http://ferraraterraeacqua.it/">http://ferraraterraeacqua.it/</a>
+        </p>
+
+      </div>
+
+      <div class="right-60">
+        <img src="./images/ferraraterraeacqua.png" alt="Ferrara Terra e Acqua"/>
+      </div>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+
+    <section class="slide">
+      <h2>Plone.it - users' map</h2>
+
+      <div class="left-40"
+        style="font-size: 90%">
+        <p>
+          We can also view the portal users in a specific map</p>
+        <p>With a portlet we can include the map in a different context such as a landing page.
+        </p>
+        <ul>
+          <li>collective.geo.usersmap</li>
+        </ul>
+
+        <p class="reference-link">
+          <a href="http://plone.it/partecipa">http://plone.it/partecipa</a>
+        </p>
+
+      </div>
+
+      <div class="right-60">
+        <img src="./images/plone-it.png" alt="plone.it website"/>
+      </div>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Looking for my content</h2>
+      <!-- <h3>Spatial index</h3> -->
+      <div class="left-50">
+        <h4>Inside Plone</h4>
+        <ul>
+          <li>collective.geo.index</li>
+        </ul>
+
+        <h5>External catalogs</h5>
+
+        <ul>
+          <li>SOLR
+            <ul>
+              <li>collective.solr</li>
+            </ul>
+          </li>
+          <li>PostGIS</li>
+        </ul>
+      </div>
+
+      <div class="right-50">
+        <p class="small-font">
+        when an object is geo-referenced
+        an event is fired by
+        <em>collective.geo.geographer</em>
+        </p>
+        <pre class="prettyprint">
+&lt;subscriber
+  handler=".MySubscriber"
+  for="IObjectGeoreferencedEvent"
+/&gt;
+        </pre>
+      </div>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+
+    <section class="slide">
+      <h1>collective.geo under the hood</h1>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+
+    <section class="slide">
+      <h2>The core of collective.geo</h2>
+      <div class="left-50" style="width: 35%">
+        <h3>Dependencies</h3>
+        <ul>
+          <li>Shapely</li>
+          <li>libgeos_c</li>
+          <li>geopy</li>
+          <li>BeautifulSoup</li>
+        </ul>
+      </div>
+      <div class="right-50" style="width: 60%">
+        <h3>Installation</h3>
+        <pre class="prettyprint">
+[buildout]
+extends = http://dist.plone.org/release/4.2.1/versions.cfg
+
+eggs =
+  collective.geo.bundle
+  BeautifulSoup
+...
+        </pre>
+      </div>
+      <p style="clear: both"><small>Note: Shapely dependency will be removed in the next release</small></p>
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>collective.geo structure</h2>
+
+      <div class="image-full">
+        <img src="./images/cgeo-structure.png" alt="c.geo structure"/>
+      </div>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+
+    <section class="slide">
+      <h2>collective.geo.openlayers</h2>
+
+      <p>Includes the javascript library Openlayers in Plone and some other javascripts that are useful for managing maps in collective.geo</p>
+
+      <pre class="prettyprint">
+layer = new OpenLayers.Layer.Google(
+  'Google maps',
+  {
+    'sphericalMercator':true,
+    numZoomLevels:20
+  }
+)</pre>
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>collective.geo.geographer</h2>
+      <div class="left-50 small-font">
+        <p>
+          <ul>
+            <li>based on zgeo.geographer and zgeo.plone.geographer</li>
+            <li>provides the basic mechanism to enter geographic data into georeferenceable contents</li>
+          </ul>
+        </p>
+        <p></p>
+        <p>any object can be georeferenced</p>
+
+      </div>
+      <div class="right-50 small-font">
+
+        <pre class="prettyprint">
+
+>>> class Placemark(object):
+...     implements(
+...       IGeoreferenceable,
+...       IAttributeAnnotatable
+...     )
+
+>>> placemark = Placemark()
+
+>>> geo = IGeoreferenced(placemark)
+>>> geo.setGeoInterface('Point',
+...               (-105.08, 40.59))
+        </pre>
+      </p>
+      </div>
+
+      <aside class="presenter-notes">
+        this is a note!
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+
+    </section>
+
+    <section class="slide">
+      <h2>collective.geo.settings</h2>
+
+        <p>store default settings for collective.geo
+          <ul>
+            <li>map center</li>
+            <li>zoom level</li>
+            <li>which layers have to be shown on the map</li>
+            <li>which contents can be georeferenced</li>
+            <li>default styles for all features</li>
+          </ul>
+        </p>
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+
+    <section class="slide">
+      <h2>collective.geo.mapwidget</h2>
+
+      <p>
+        <ul>
+          <li>manages the mechanism that handles Openlayers maps in Plone</li>
+          <li>each map widget is a Zope component which contains a series of layers</li>
+          <li>all the maps in collective.geo are composed by one or more map layers and each layer returns a javascript snippet by a page template which contains all information about the layer itself</li>
+        </ul>
+      </p>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+
+    </section>
+
+
+    <section class="slide">
+      <h2>collective.geo.mapwidget</h2>
+
+      <p>
+        <pre class="prettyprint">
+>>> from collective.geo.mapwidget import maplayer
+>>> class BingStretMapLayer(maplayer.MapLayer):
+...     name = u"bing_map"
+...     Title = _(u'Bing Streets')
+...     type = 'bing'
+...     jsfactory = """
+...       function() {
+...         return new OpenLayers.Layer.VirtualEarth('%s',
+...           {'type': VEMapStyle.Shaded,
+...            'sphericalMercator': true});
+...       }""" % Title
+        </pre>
+      </p>
+
+      <p>
+        <pre class="prettyprint">
+&lt;metal:layer
+    use-macro="context/@@collectivegeo-macros/map-widget" /&gt;
+        </pre>
+      </p>
+      <aside class="presenter-notes">
+      </aside>
+
+    </section>
+
+    <section class="slide small-font">
+      <h2>collective.geo.contentlocations</h2>
+      <p>user interface for georeferencing Archetypes content types</p>
+      <div class="left-40 ">
+        <p>
+          <ul>
+            <li>data can be inserted in WKT format</li>
+            <li>geocoding with geopy</li>
+            <li>it is possible to set customized styles</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="right-60">
+        <img src="./images/set_coordinates.png" alt="plone.it website"/>
+      </div>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>collective.geo.kml</h2>
+      <p>registers a kml view on the georeferenced objects and on folderish contents such as Folders and Collections.
+      </p>
+
+      <p>the KML file can be used on external services like
+        Google Earth/Maps</p>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+
+    <section class="slide">
+      <h2>Dexterity</h2>
+      <dl>
+        <dt>collective.z3cform.mapwidget</dt>
+        <dd>it's a specific widget for <em>z3c.form</em> that allows to manage the geographic data in an easy way</dd>
+        <dt>collective.geo.behaviour</dt>
+        <dd>it's a <em>Dexterity</em> behaviour that allows to georeference contents and uses the annotations mechanism of <em>collective.geo.geographer</em> for registering data</dd>
+      </dl>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+   <section class="slide">
+      <h1>More extensions</h1>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>collective.geo.mapcontent</h2>
+      <div>
+        <div class="image-full">
+          <img src="./images/map_content.png" alt="c.geo.mapcontent" />
+        </div>
+      </div>
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>collective.geo.file</h2>
+
+      <p>it provides a view for <em>KML</em>, <em>KMZ (Keyhole Markup Language)</em> and <em>GPX (GPS eXchange Format)</em> files.
+      <p>The view renders the file in a openlayers Map using the collective.geo library.</p>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Conclusion</h2>
+
+      <ul>
+        <li>7 packages on the core (two more for Dexterity soon)</li>
+        <li>9 addons packages</li>
+        <li>translated in 9 languages</li>
+        <li>Coactivate <a href="http://www.coactivate.org/projects/collectivegeo/">http://www.coactivate.org/projects/collectivegeo</a></li>
+        <li>Readthedocs <a
+          href="http://collecivegeo.readthedocs.org/en/latest/index.html">
+          http://collecivegeo.readthedocs.org</a></li>
+      </ul>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Contributors</h2>
+
+      <div class="left-50">
+      <ul>
+        <li>Sean Gillies</li>
+        <li>Silvio Tomatis - silviot</li>
+        <li>Gerhard Weis - gweis</li>
+        <li>David Breitkreutz - rockdj</li>
+        <li>Makina corpus</li>
+      </ul>
+      </div>
+      <div class="right-50">
+      <ul>
+        <li>Christian Ledermann - nan</li>
+        <li>David Beitey - davidjb</li>
+        <li>Maurizio Delmonte - miziodel</li>
+        <li>Alice Narduzzo</li>
+        <li>Enrico Barra</li>
+      </ul>
+
+      </div>
+
+      <aside class="presenter-notes">
+      </aside>
+
+      <footer>
+        <span>Where is my content? &mdash; Giorgio Borelli</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+
+
+    <!-- End slides -->
+
+    <!-- Responsive images: http://jquerypicture.com/ -->
+    <!-- Media queries: http://scottjehl.github.com/CSS-Download-Tests/ -->
+    <!-- http://www.w3.org/TR/css3-fonts/#font-matching-algorithm -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <div class="deck-presenter">
+      <a href="#" class="deck-presenter-button start">Start</a>
+      <dl>
+        <dt>Slides</dt>
+        <dd class="deck-status">
+            <span class="deck-status-current"></span>/<span class="deck-status-total"></span>
+        </dd>
+        <dt>Time remaining</dt>
+        <dd class="deck-presenter-remaining"></dd>
+        <dt>Notes</dt>
+        <dd class="deck-presenter-notes">
+          <p>No notes</p>
+        </dd>
+      </dl>
+    </div>
+
+    <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+    <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+    <script src="deck.js/jquery-1.7.2.min.js"></script>
+    <script src="deck.js/core/deck.core.js"></script>
+    <script src="deck.js/extensions/menu/deck.menu.js"></script>
+    <script src="deck.js/extensions/status/deck.status.js"></script>
+    <script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+    <script src="node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="scripts/deck.presenter.js"></script>
+    <script src="prettify/prettify.js"></script>
+    <script src="prettify/lang-css.js"></script>
+    <script src="scripts/paint-it-plone.js"></script>
+  </body>
+</html>

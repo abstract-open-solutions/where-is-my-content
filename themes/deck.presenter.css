@@ -1,0 +1,83 @@
+.deck-container .presenter-notes {
+    display: none;
+}
+
+.deck-container .deck-presenter {
+    display: none;
+    background-color: hsla(330, 40%, 95%, 0.7);
+    border-radius: 1em;
+    bottom: 4em;
+    font-size: 10pt;
+    height: 40em;
+    padding: 1em;
+    position: absolute;
+    right: 4em;
+    width: 20em;
+    z-index: 1000;
+}
+
+.deck-container .deck-presenter .deck-status {
+    position: static;
+    font-size: 300%;
+    font-weight: bold;
+    color: hsl(240, 30%, 20%);
+}
+
+.deck-container .deck-presenter a.deck-presenter-button {
+    border-radius: 0.5em;
+    display: block;
+    font-weight: bold;
+    margin: 0 auto;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    width: 4em;
+}
+
+.deck-container .deck-presenter a.deck-presenter-button.start {
+    color: hsl(120, 20%, 80%);
+    background-color: hsl(120, 90%, 30%);
+}
+
+.deck-container .deck-presenter a.deck-presenter-button.stop {
+    color: hsl(0, 20%, 80%);
+    background-color: hsl(0, 90%, 30%);
+}
+
+.deck-container .deck-presenter dl {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 2pt solid hsla(240, 10%, 50%, 0.8);
+}
+
+.deck-container .deck-presenter dl > dt {
+    font-weight: bold;
+    font-size: 110%;
+}
+
+.deck-container .deck-presenter dl > dd {
+    margin-left: 2em;
+    padding: 8pt 0pt 8pt 0pt;
+}
+
+.deck-container .deck-presenter dl > dd.deck-presenter-remaining {
+    font-size: 300%;
+    font-weight: bold;
+}
+
+.deck-container .deck-presenter dl > dd.deck-presenter-remaining > .normal {
+    color: hsl(120, 90%, 30%);
+}
+
+.deck-container .deck-presenter dl > dd.deck-presenter-remaining > .hurryup {
+    color: hsl(30, 90%, 30%);
+}
+
+.deck-container .deck-presenter dl > dd.deck-presenter-remaining > .wrapup {
+    color: hsl(0, 90%, 30%);
+}
+
+.deck-container .deck-presenter dl > dd.deck-presenter-notes {
+    color: hsl(240, 30%, 20%);
+}
