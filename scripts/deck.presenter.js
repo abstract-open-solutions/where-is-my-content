@@ -7,16 +7,17 @@
             hurryUpTime: 8*60,
             wrapUpTime: 2*60
         };
+        var socket = null;
         var presenter = /presenter:(on|off)/.exec(document.location.href);
         var slide = /slide:([0-9]+)/.exec(document.location.href);
         if(slide) slide = parseInt(slide[1], 10);
         else slide = 0;
         if(presenter) presenter = presenter[1];
-        else presenter = 'off';
+        else presenter = null;
         $.extend(opts, options);
-        var socket = io.connect('http://localhost:8000');
         switch(presenter) {
             case "on": {
+                socket = io.connect('http://localhost:8000');
                 $('.deck-presenter').show();
                 var timer = opts.totalTime;
                 var showTimer = function() {
@@ -83,6 +84,7 @@
                 break;
             }
             case "off": {
+                socket = io.connect('http://localhost:8000');
                 $('.deck-status').hide();
                 $('.deck-prev-link, .deck-next-link').hide();
                 socket.on('presenter-sink', function(data) {
@@ -94,7 +96,6 @@
                 break;
             }
             default:
-                throw "Couldn't determine presenter mode";
                 break;
         }
     };
