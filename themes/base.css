@@ -1,0 +1,724 @@
+@import "../deck.js/core/deck.core.css";
+@import "../deck.js/extensions/menu/deck.menu.css";
+@import "../deck.js/extensions/navigation/deck.navigation.css";
+@import "../deck.js/extensions/status/deck.status.css";
+@import "../deck.js/extensions/scale/deck.scale.css";
+@import "../deck.js/themes/transition/horizontal-slide.css";
+@import "deck.presenter.css";
+
+@font-face {
+    font-family: "Marck Script";
+    src: url("../fonts/Marck_Script/MarckScript-Regular.woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Asap";
+    src: url("../fonts/Asap/Asap-Regular.woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Asap";
+    src: url("../fonts/Asap/Asap-Italic.woff");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Asap";
+    src: url("../fonts/Asap/Asap-Bold.woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Asap";
+    src: url("../fonts/Asap/Asap-BoldItalic.woff");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Bitter";
+    src: url("../fonts/Bitter/Bitter-Italic.woff");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Bitter";
+    src: url("../fonts/Bitter/Bitter-Regular.woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Bitter";
+    src: url("../fonts/Bitter/Bitter-Bold.woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-Thin.woff");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-ExtraLight.woff");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-Light.woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-Regular.woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-Medium.woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-SemiBold.woff");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-Bold.woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-ExtraBold.woff");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-Heavy.woff");
+    font-weight: 900;
+    font-style: normal;
+}
+
+.deck-container {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.75em;
+    font-weight: 500;
+    background: hsl(240, 10%, 95%);
+    color: hsl(240, 10%, 15%);
+}
+
+.deck-container strong,
+.deck-container b {
+    font-weight: 700;
+    color: hsl(240, 10%, 10%);
+}
+
+.deck-container em,
+.deck-container i {
+    font-style: italic;
+    color: hsl(240, 10%, 30%);
+}
+
+.deck-container .slide {
+    background: hsl(240, 10%, 95%);
+}
+
+.deck-container .slide h1 {
+    font-family: "Bitter";
+    font-weight: normal;
+    font-size: 4em;
+    color: hsl(0, 15%, 5%);
+}
+
+.deck-container .slide h2  {
+    font-family: "Asap";
+    font-weight: bold;
+    color: hsl(0, 80%, 50%);
+    border-bottom-color: hsl(240, 10%, 70%);
+}
+
+.deck-container .slide h2 small {
+    font-weight: normal;
+    color: hsl(0, 70%, 70%);
+    font-size: 85%;
+}
+
+.deck-container .slide h3 {
+    color: hsl(0, 10%, 30%);
+}
+
+.deck-container .slide code {
+    font-family: monospace;
+    color: hsl(240, 10%, 10%);
+    background-color: hsl(240, 10%, 80%);
+    border-radius: 0.2em;
+    padding: 0.1em 0.2em 0.1em 0.2em;
+    vertical-align: middle;
+}
+
+.deck-container .slide table {
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.deck-container .slide table caption {
+    font-size: 0.7em;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 0.3em;
+    color: hsl(240, 10%, 30%);
+}
+
+.deck-container .slide table tr th,
+.deck-container .slide table tr td {
+    padding: 0.2em;
+}
+
+.deck-container .slide table tr th {
+    background-color: hsl(240, 10%, 15%);
+    color: hsl(240, 10%, 95%);
+    border: 1pt solid hsl(240, 10%, 30%);
+    font-weight: 600;
+}
+
+.deck-container .slide table tr td {
+    border: 1pt solid hsl(240, 10%, 70%);
+}
+
+.deck-container .slide table.data tr td {
+    text-align: center;
+}
+
+.deck-container .slide table tr td:first-child {
+    text-align: center;
+}
+
+.deck-container .slide table.data tr td:first-child {
+    text-align: left;
+}
+
+.deck-container .slide table tr th small,
+.deck-container .slide table tr td small {
+    font-style: italic;
+    color: hsl(240, 10%, 30%);
+}
+
+.deck-container .slide table tr td p {
+    margin: 0em 0em 0.4em 0em;
+    padding: 0em;
+}
+
+.deck-container .slide ::-moz-selection {
+    background: hsl(0, 80%, 50%);
+    color: hsl(240, 10%, 95%);
+}
+
+.deck-container .slide ::selection {
+    background: hsl(0, 80%, 50%);
+    color: hsl(240, 10%, 95%);
+}
+
+.deck-container .slide a,
+.deck-container .slide a:hover,
+.deck-container .slide a:focus,
+.deck-container .slide a:active,
+.deck-container .slide a:visited {
+    color: hsl(0, 80%, 50%);
+    text-decoration: none;
+}
+
+.deck-container .slide a:hover,
+.deck-container .slide a:focus {
+    text-decoration: underline;
+}
+
+.deck-container > .slide .deck-before,
+.deck-container > .slide .deck-previous {
+  opacity: 0.6;
+}
+
+.deck-container > .slide .deck-before:not(.deck-child-current) .deck-before,
+.deck-container > .slide .deck-before:not(.deck-child-current) .deck-previous,
+.deck-container > .slide .deck-previous:not(.deck-child-current) .deck-before,
+.deck-container > .slide .deck-previous:not(.deck-child-current) .deck-previous {
+  opacity: 1;
+}
+
+.deck-container > .slide .deck-child-current {
+  opacity: 1;
+}
+
+.deck-container .deck-prev-link, .deck-container .deck-next-link {
+  background: hsl(0, 10%, 40%);
+  font-family: serif;
+}
+
+.deck-container .deck-prev-link,
+.deck-container .deck-prev-link:hover,
+.deck-container .deck-prev-link:focus,
+.deck-container .deck-prev-link:active,
+.deck-container .deck-prev-link:visited,
+.deck-container .deck-next-link,
+.deck-container .deck-next-link:hover,
+.deck-container .deck-next-link:focus,
+.deck-container .deck-next-link:active,
+.deck-container .deck-next-link:visited {
+    color: hsl(0, 10%, 90%);
+}
+.deck-container .deck-prev-link:hover,
+.deck-container .deck-prev-link:focus,
+.deck-container .deck-next-link:hover,
+.deck-container .deck-next-link:focus {
+    background: hsl(0, 80%, 50%);
+    text-decoration: none;
+}
+
+.deck-container .deck-status {
+    font-size: 0.6666em;
+}
+
+.float-left {
+    float: left;
+}
+
+.deck-container a.image-copy {
+    position: absolute;
+    bottom: 7pt;
+    left: 7pt;
+    font-family: "Marck Script";
+    font-weight: normal;
+    font-size: 12pt;
+    color: hsl(240, 10%, 55%);
+}
+
+.deck-container a.image-copy:visited {
+    color: hsl(240, 10%, 55%);
+}
+
+.deck-container .slide blockquote {
+    font-size: inherit;
+    font-style: italic;
+    border-left: none;
+    display: block;
+    margin: 0;
+    padding-left: 1em;
+    padding-top: 1em;
+    position: relative;
+    padding-bottom: 2em;
+    background-color: hsl(240, 15%, 90%);
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+}
+
+.deck-container .slide blockquote:before {
+    content: "«";
+}
+
+.deck-container .slide blockquote small {
+    display: block;
+    position: absolute;
+    right: 2em;
+    bottom: 1em;
+    font-size: 0.7em;
+    color: hsl(240, 15%, 40%);
+}
+
+.deck-container .row:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.deck-container .row .half.slide {
+    display: none;
+}
+
+.deck-container .row .half.slide.deck-current,
+.deck-container .row .half.slide.deck-previous {
+    display: block;
+    width: 50%;
+    float: left;
+    margin: 0;
+}
+
+.deck-container .slide footer {
+    position: absolute;
+    bottom: 7pt;
+    right: 7pt;
+    color: hsl(240, 10%, 55%);
+    z-index: 1000;
+}
+
+.deck-container .slide footer > * {
+    font-family: "Marck Script";
+    font-size: 12pt;
+    font-weight: normal;
+    line-height: 56px;
+    vertical-align: bottom;
+}
+
+.deck-container .slide footer .abstract-logo {
+    background: url("../images/abstract-logo-128.png")
+        center center no-repeat;
+    color: transparent;
+    width: 128px;
+    display: inline-block;
+    height: 56px;
+}
+
+.deck-container .slide footer .abstract-logo:visited {
+    color: transparent;
+}
+
+pre.prettyprint {
+    font-family: monospace;
+    font-size: 0.57em;
+    margin: 0em 1em 1em 1em;
+    padding: 0em 2em 2em 2em;
+    border: 0 transparent;
+    border-radius: 1em;
+}
+
+pre.prettyprint span.highlight {
+    background-color: hsl(0, 65%, 70%);
+}
+
+.deck-container dl {
+    margin-bottom: 1em;
+}
+
+.deck-container dl dt {
+    font-weight: bold;
+}
+
+.deck-container dl dd {
+    margin-left: 2em;
+}
+
+.deck-container ol li ol {
+    list-style-type: lower-alpha;
+    margin-bottom: 0;
+}
+
+.deck-container ul li ul {
+    list-style-type: disc;
+}
+
+.two-columns {
+    -moz-columns: 2;
+    -webkit-columns: 2;
+    columns: 2;
+}
+
+/* Slides specific */
+
+.deck-container .iphone-wrapper {
+    background: url("../images/iphone.png") top left no-repeat;
+    height: 500px;
+    width: 944px;
+    position: absolute;
+    left: 1em;
+    top: 5em;
+}
+
+.deck-container .iphone-wrapper > div {
+    padding-top: 56px;
+    padding-left: 180px;
+    width: 560px;
+}
+
+#title-slide {
+    background: url("../images/paint.jpg") bottom right no-repeat;
+}
+
+#title-slide h1 {
+    /*font-family: "Marck Script";*/
+    color: hsl(240, 60%, 10%);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 435%;
+    position: absolute;
+    transform: none;
+    left: auto;
+    right: 0.3em;
+    top: auto;
+    bottom: 0.5em;
+    padding: 0em;
+}
+
+#title-slide h1 img {
+    bottom: -0.15em;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#theming ul {
+    list-style-type: none;
+}
+
+#theming div.half.slide.deck-previous li:after {
+    content: "⎯⎯▸";
+    float: right;
+}
+
+#dawn-of-a-design h1,
+#typography h1,
+#grids h1,
+#css-preprocessors h1,
+#cutting-and-seaming h1 {
+    background-color: hsla(240, 10%, 95%, 0.7)
+}
+
+#dawn-of-a-design footer,
+#dawn-of-a-design .image-copy,
+#grids footer,
+#grids .image-copy,
+#css-preprocessors footer,
+#css-preprocessors .image-copy,
+#microsoft-internet-explorer footer {
+    color: hsl(240, 5%, 95%);
+}
+
+#dawn-of-a-design footer .abstract-logo,
+#grids footer .abstract-logo,
+#css-preprocessors footer .abstract-logo,
+#microsoft-internet-explorer footer .abstract-logo {
+    background: url("../images/abstract-logo-white-128.png")
+        center center no-repeat;
+}
+
+#dawn-of-a-design {
+    background: url("../images/dawn.jpg") top center no-repeat;
+}
+
+#typography h1 {
+    z-index: 1000;
+}
+
+#typography footer,
+#cutting-and-seaming footer,
+#cutting-and-seaming .image-copy,
+#conclusion footer,
+#conclusion .image-copy {
+    color: hsl(240, 5%, 5%);
+}
+
+#typography blockquote {
+    background: transparent;
+    color: hsl(240, 10%, 65%);
+    font-size: 2em;
+    position: absolute;
+    top: -2.5em;
+    left: -2.5em;
+    width: 120%;
+}
+
+#getting-text-wrong-bad {
+    padding: 1em;
+    font-size: 0.5em;
+    text-align: justify;
+    font-family: "Bitter";
+    color: black;
+}
+
+#getting-text-wrong-bad p,
+#getting-text-wrong-bad ul {
+    line-height: 0.9em;
+}
+
+#getting-text-wrong-bad p {
+    margin-bottom: 2em;
+}
+
+#getting-text-wrong-bad ul {
+    margin-bottom: 3em;
+}
+
+#getting-text-wrong-bad ul li {
+    padding: 0;
+    margin: 0;
+}
+
+#getting-text-wrong-bad img,
+#getting-text-wrong-bad h4 {
+    margin: 0;
+    padding: 0;
+}
+
+#getting-text-wrong-good {
+    font-size: 0.6em;
+    padding: 1em 2em 1em 2em;
+    text-align: left;
+    line-height: 1.2em;
+}
+
+#getting-text-wrong-good img {
+    margin: 1em;
+    padding: 0em;
+    border: 1pt hsl(240, 10%, 55%);
+}
+
+#getting-text-wrong-good h4 {
+    line-height: 1.4em;
+}
+
+#grids {
+    background: url("../images/grid.jpg") center center no-repeat;
+}
+
+#css-preprocessors {
+    background: url("../images/typewriter.jpg") center center no-repeat;
+}
+
+#microsoft-internet-explorer {
+    background-color: hsl(350, 90%, 30%);
+}
+
+#microsoft-internet-explorer h1 {
+    font-family: sans-serif;
+    font-weight: thin;
+    text-align: left;
+    line-height: 80px;
+    color: white;
+    width: 350px;
+    padding-left: 200px;
+    padding-top: 18px;
+    font-size: 75px;
+    background: url('../images/internet-explorer.png') top left no-repeat;
+    margin: 0 auto;
+}
+
+#cutting-and-seaming {
+    background: url("../images/cutting-seaming.jpg") center center no-repeat;
+}
+
+#conclusion {
+    background: url("../images/conclusion.jpg") center center no-repeat;
+}
+
+#conclusion h1 {
+    font-family: "Raleway";
+    font-weight: 900;
+    color: hsl(0, 5%, 100%);
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-top: 0.6em;
+    font-size: 5em;
+}
+
+@media print {
+    .deck-container > section {
+        page-break-after: always;
+        page-break-before: always;
+        page-break-inside: avoid;
+        display: block !important;
+        width: 100% !important;
+        height: 9.60in !important;
+        overflow: hidden;
+        position: relative !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .presenter-notes {
+        display: none;
+    }
+
+    .deck-container {
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    .deck-container .slide {
+        background-color: white;
+    }
+
+    script {
+        display: none;
+    }
+
+    .slide {
+        visibility: visible !important;
+        -webkit-transform: none !important;
+        -moz-transform: none !important;
+        -o-transform: none !important;
+        -ms-transform: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .deck-container .row .half.slide {
+        display: block;
+        width: 50%;
+        float: left;
+        margin: 0;
+    }
+
+    h1 {
+        -webkit-transform: none !important;
+        -moz-transform: none !important;
+        -o-transform: none !important;
+        -ms-transform: none !important;
+        transform: none !important;
+        padding: 0 !important;
+        position: static !important;
+        margin-top: 4em !important;
+        margin-left: 0em !important;
+        margin-right: 0em !important;
+    }
+
+    /* special cases */
+    #title-slide h1 {
+        margin-top: 6em !important;
+    }
+
+    #theming ul {
+        list-style-type: disc;
+    }
+
+    #typography blockquote {
+        display: none;
+    }
+
+    #microsoft-internet-explorer h1 {
+        color: white;
+        height: 6em;
+        padding-top: 0.2em !important;
+        padding-left: 3em !important;
+        font-size: 3em;
+        background: url('../images/internet-explorer.png') top left no-repeat;
+    }
+}
