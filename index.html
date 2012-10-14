@@ -17,11 +17,8 @@
 
     <!-- Begin slides -->
     <section id="title-slide" class="slide">
-      <div class="container">
-        <h1>Where is my content?</h1>
-        <h3>Geo-referencing content types in Plone with collective.geo</h3>
-      </div>
-
+      <h3>Geo-referencing content types in Plone with collective.geo</h3>
+      <h1>Where is my content?</h1>
       <footer>
         <span>Where is my content? &mdash; Giorgio Borelli</span>
         <a href="http://www.abstract.it" title="Abstract Open Solutions"
@@ -50,17 +47,18 @@
 
     <section class="slide">
       <h2>Web maps: <small>when, why and how</small></h2>
-
+      <div class="row">
         <ol>
-        <li class="half slide">Complex and specialized GIS application</li>
-        <li class="half slide">Maps are the central part of the app
+        <li class="slide">Complex and specialized GIS application</li>
+        <li class="slide">Maps are the central part of the app
           <ul>
             <li>Panoramio</li>
             <li>Foursquare</li>
             <li>Only-apartments</li>
           </ul>
-        <li class="half slide">Geo-referenced CMS</li>
+        <li class="slide">Geo-referenced CMS</li>
         </ol>
+      </div>
       <aside class="presenter-notes">
       </aside>
 
@@ -105,25 +103,27 @@
 
     <section id="plone-products" class="slide">
       <h2>What if c.geo was not there</h2>
-      <div class="left-50">
-        <h3>Plone products</h3>
-        <ul>
-          <li>Products.Maps</li>
-          <li>Products.ATGoogleMaps</li>
-          <li>redturtle.maps.core</li>
-          <li>raptus.article.map</li>
-        </ul>
-      </div>
+      <div class="row">
+        <div class="half slide">
+          <h3>Plone products</h3>
+          <ul>
+            <li>Products.Maps</li>
+            <li>Products.ATGoogleMaps</li>
+            <li>redturtle.maps.core</li>
+            <li>raptus.article.map</li>
+          </ul>
+        </div>
 
-      <div class="right-50 half slide">
-        <div class="cons">
-          <h3>Cons</h3>
-          <ol>
-            <li>specific for Archetypes</li>
-            <li>can only georeference points</li>
-            <li>can only use Google Maps</li>
-            <li>developed for a specific project</li>
-          <ol>
+        <div class="half slide">
+          <div class="cons">
+            <h3>Cons</h3>
+            <ol>
+              <li>specific for Archetypes</li>
+              <li>can only georeference points</li>
+              <li>can only use Google Maps</li>
+              <li>developed for a specific project</li>
+            <ol>
+          </div>
         </div>
       </div>
       <aside class="presenter-notes">
@@ -138,13 +138,13 @@
 
     <section class="slide">
       <h2>collective.geo manifesto</h2>
-
-      <ul>
-        <li class="half slide"><h3>modular and easily extendable</h3></li>
-        <li class="half slide"><h3>up to date and taking advantage of ZCA</h3></li>
-        <li class="half slide"><h3>not related to a specific map service</h3></li>
-      </ul>
-
+      <div>
+        <ul>
+          <li class="">modular and easily extendable</li>
+          <li class="">up to date and taking advantage of ZCA</li>
+          <li class="">not related to a specific map service</li>
+        </ul>
+      </div>
       <aside class="presenter-notes">
       </aside>
 
@@ -156,7 +156,7 @@
     </section>
 
 
-    <section class="slide">
+    <section id="use-cases" class="slide">
       <h1>Use cases</h1>
 
       <aside class="presenter-notes">
@@ -172,25 +172,26 @@
 
     <section class="slide">
       <h2>Use the location field</h2>
-      <div class="left-40">
-        <h3>ENEA</h3>
-        <p>We can use the location field of a content-type to geo-locate the offices of a company</p>
+      <div class="row">
+        <div class="left-40">
+          <h3>ENEA</h3>
+          <p>We can use the location field of a content-type to geo-locate the offices of a company</p>
 
-        <ul>
-          <li>Archetypes</li>
-          <li>collective.geo</li>
-        </ul>
+          <ul>
+            <li>Archetypes</li>
+            <li>collective.geo</li>
+          </ul>
 
-        <p class="reference-link">
-          <a href="http://www.enea.it">http://www.enea.it</a>
-        </p>
+          <p class="reference-link">
+            <a href="http://www.enea.it">http://www.enea.it</a>
+          </p>
 
+        </div>
+
+        <div class="right-60">
+          <img src="./images/Dove-siamo-Enea.png" alt="ENEA webstie"/>
+        </div>
       </div>
-
-      <div class="right-60">
-        <img src="./images/Dove-siamo-Enea.png" alt="ENEA webstie"/>
-      </div>
-
       <aside class="presenter-notes">
       </aside>
 
@@ -203,26 +204,26 @@
 
     <section class="slide">
       <h2>Dexterity content types TTW</h2>
+      <div class="row">
+        <div class="left-40">
+          <h3>Tropical Data Hub</h3>
+          <p>We can assign <em>collective.geo Maps</em> behaviour to a Dexterity content-type in order to make it geo-referenceable</p>
 
-      <div class="left-50">
-        <h3>Tropical Data Hub</h3>
-        <p>We can assign <em>collective.geo Maps</em> behaviour to a Dexterity content-type in order to make it geo-referenceable</p>
+          <ul>
+            <li>Dexterity</li>
+            <li>collective.geo.behaviour</li>
+          </ul>
 
-        <ul>
-          <li>Dexterity</li>
-          <li>collective.geo.behaviour</li>
-        </ul>
+          <p class="reference-link">
+            <a href="http://tropicaldatahub.org/">http://tropicaldatahub.org/</a>
+          </p>
 
-        <p class="reference-link">
-          <a href="http://tropicaldatahub.org/">http://tropicaldatahub.org/</a>
-        </p>
+        </div>
 
+        <div class="right-60">
+          <img src="./images/Tropical-Data-Hub.png" alt="Tropical data hub webstie"/>
+        </div>
       </div>
-
-      <div class="right-50">
-        <img src="./images/Tropical-Data-Hub.png" alt="Tropical data hub webstie"/>
-      </div>
-
       <aside class="presenter-notes">
       </aside>
 
@@ -235,27 +236,26 @@
 
     <section class="slide">
       <h2>Not only points</h2>
+      <div class="row">
+        <div class="left-40">
+          <h3>IW:LEARN</h3>
+          <p>c.geo allows to geo-reference content with different shapes
+            <ul>
+              <li>Points</li>
+              <li>Lines</li>
+              <li>Polygons</li>
+            </ul>
 
+          <p class="reference-link">
+            <a href="http://iwlearn.net/">http://iwlearn.net/</a>
+          </p>
 
-      <div class="left-40">
-        <h3>IW:LEARN</h3>
-        <p>c.geo allows to geo-reference content with different shapes
-          <ul>
-            <li>Points</li>
-            <li>Lines</li>
-            <li>Polygons</li>
-          </ul>
+        </div>
 
-        <p class="reference-link">
-          <a href="http://iwlearn.net/">http://iwlearn.net/</a>
-        </p>
-
+        <div class="right-60">
+          <img src="./images/IW_LEARN-1.png" alt="IW:LEARN webstie"/>
+        </div>
       </div>
-
-      <div class="right-60">
-        <img src="./images/IW_LEARN-1.png" alt="IW:LEARN webstie"/>
-      </div>
-
       <aside class="presenter-notes">
       </aside>
 
@@ -268,21 +268,21 @@
 
     <section id="flexitopic" class="slide">
       <h2>Flexitopic</h2>
+      <div class="row">
+        <div class="left-40">
+          <p>We can aggregate geo-referenced contents with a Plone collection and, with flexitopic, we can show the results on a table and paginate them
+          </p>
+          <ul>
+            <li>collective.flexitopic</li>
+            <li>c.geo.flexitopic</li>
+          </ul>
 
-      <div class="left-40">
-        <p>We can aggregate geo-referenced contents with a Plone collection and, with flexitopic, we can show the results on a table and paginate them
-        </p>
-        <ul>
-          <li>collective.flexitopic</li>
-          <li>c.geo.flexitopic</li>
-        </ul>
+        </div>
 
+        <div class="right-60">
+          <img src="./images/flexitopic.png" alt="Flexitopic"/>
+        </div>
       </div>
-
-      <div class="right-60">
-        <img src="./images/flexitopic.png" alt="Flexitopic"/>
-      </div>
-
 
       <aside class="presenter-notes">
       </aside>
@@ -297,17 +297,19 @@
     <section class="slide">
       <h2>More customizations</h2>
 
-      <div class="left-40 small-font">
-        <h3>AORIF</h3>
+      <div class="row">
+        <div class="left-40 small-font">
+          <h3>AORIF</h3>
 
-        <p>The modular structure of collective.geo allows us to customize it in a simple way
-        </p>
-        <p>On saving a content we can geolocate its address and show it on a map. The user doesn't need to know the coordinates neither to use a complex UI.
-        </p>
-      </div>
+          <p>The modular structure of collective.geo allows us to customize it in a simple way
+          </p>
+          <p>On saving a content we can geolocate its address and show it on a map. The user doesn't need to know the coordinates neither to use a complex UI.
+          </p>
+        </div>
 
-      <div class="right-60">
-        <img src="./images/aorif-plone.png" alt="Aorif"/>
+        <div class="right-60">
+          <img src="./images/aorif-plone.png" alt="Aorif"/>
+        </div>
       </div>
 
       <aside class="presenter-notes">
@@ -324,26 +326,28 @@
     <section class="slide">
       <h2>Backend/frontend</h2>
 
-      <div class="left-40 small-font">
+      <div class="row">
+        <div class="left-40 small-font">
 
-        <p>We can use a different javascript map services to display contents.
-          <ul>
-            <li>Google maps</li>
-            <li>Polymaps <small><a href="http://polymaps.org/">http://polymaps.org/</a></small></li>
-            <li>Leaflet <small><a href="http://leaflet.cloudmade.com">http://leaflet.cloudmade.com</a></small></li>
-            <li>Kartograph <small><a href="http://kartograph.org">http://kartograph.org</a></small></li>
-          </ul>
+          <p>We can use a different javascript map services to display contents.
+            <ul>
+              <li>Google maps</li>
+              <li>Polymaps <small><a href="http://polymaps.org/">http://polymaps.org/</a></small></li>
+              <li>Leaflet <small><a href="http://leaflet.cloudmade.com">http://leaflet.cloudmade.com</a></small></li>
+              <li>Kartograph <small><a href="http://kartograph.org">http://kartograph.org</a></small></li>
+            </ul>
 
-        </p>
+          </p>
 
-        <p class="reference-link">
-          <a href="http://ferraraterraeacqua.it/">http://ferraraterraeacqua.it/</a>
-        </p>
+          <p class="reference-link">
+            <a href="http://ferraraterraeacqua.it/">http://ferraraterraeacqua.it/</a>
+          </p>
 
-      </div>
+        </div>
 
-      <div class="right-60">
-        <img src="./images/ferraraterraeacqua.png" alt="Ferrara Terra e Acqua"/>
+        <div class="right-60">
+          <img src="./images/ferraraterraeacqua.png" alt="Ferrara Terra e Acqua"/>
+        </div>
       </div>
 
       <aside class="presenter-notes">
@@ -360,24 +364,26 @@
     <section class="slide">
       <h2>Plone.it - users' map</h2>
 
-      <div class="left-40"
-        style="font-size: 90%">
-        <p>
-          We can also view the portal users in a specific map</p>
-        <p>With a portlet we can include the map in a different context such as a landing page.
-        </p>
-        <ul>
-          <li>collective.geo.usersmap</li>
-        </ul>
+      <div class="row">
+        <div class="left-40"
+          style="font-size: 90%">
+          <p>
+            We can also view the portal users in a specific map</p>
+          <p>With a portlet we can include the map in a different context such as a landing page.
+          </p>
+          <ul>
+            <li>collective.geo.usersmap</li>
+          </ul>
 
-        <p class="reference-link">
-          <a href="http://plone.it/partecipa">http://plone.it/partecipa</a>
-        </p>
+          <p class="reference-link">
+            <a href="http://plone.it/partecipa">http://plone.it/partecipa</a>
+          </p>
 
-      </div>
+        </div>
 
-      <div class="right-60">
-        <img src="./images/plone-it.png" alt="plone.it website"/>
+        <div class="right-60">
+          <img src="./images/plone-it.png" alt="plone.it website"/>
+        </div>
       </div>
 
       <aside class="presenter-notes">
@@ -392,39 +398,40 @@
 
     <section class="slide">
       <h2>Looking for my content</h2>
-      <!-- <h3>Spatial index</h3> -->
-      <div class="left-50">
-        <h4>Inside Plone</h4>
-        <ul>
-          <li>collective.geo.index</li>
-        </ul>
 
-        <h5>External catalogs</h5>
+      <div class="row">
+        <div class="left-50">
+          <h4>Inside Plone</h4>
+          <ul>
+            <li>collective.geo.index</li>
+          </ul>
 
-        <ul>
-          <li>SOLR
-            <ul>
-              <li>collective.solr</li>
-            </ul>
-          </li>
-          <li>PostGIS</li>
-        </ul>
+          <h5>External catalogs</h5>
+
+          <ul>
+            <li>SOLR
+              <ul>
+                <li>collective.solr</li>
+              </ul>
+            </li>
+            <li>PostGIS</li>
+          </ul>
+        </div>
+
+        <div class="right-50">
+          <p class="small-font">
+          when an object is geo-referenced
+          an event is fired by
+          <em>collective.geo.geographer</em>
+          </p>
+          <pre class="prettyprint">
+  &lt;subscriber
+    handler=".MySubscriber"
+    for="IObjectGeoreferencedEvent"
+  /&gt;
+          </pre>
+        </div>
       </div>
-
-      <div class="right-50">
-        <p class="small-font">
-        when an object is geo-referenced
-        an event is fired by
-        <em>collective.geo.geographer</em>
-        </p>
-        <pre class="prettyprint">
-&lt;subscriber
-  handler=".MySubscriber"
-  for="IObjectGeoreferencedEvent"
-/&gt;
-        </pre>
-      </div>
-
       <aside class="presenter-notes">
       </aside>
 
@@ -436,7 +443,7 @@
     </section>
 
 
-    <section class="slide">
+    <section id="collective-geo-under-the-hood" class="slide">
       <h1>collective.geo under the hood</h1>
 
       <aside class="presenter-notes">
@@ -452,6 +459,7 @@
 
     <section class="slide">
       <h2>The core of collective.geo</h2>
+      <div class="row">
       <div class="left-50" style="width: 35%">
         <h3>Dependencies</h3>
         <ul>
@@ -461,6 +469,7 @@
           <li>BeautifulSoup</li>
         </ul>
       </div>
+
       <div class="right-50" style="width: 60%">
         <h3>Installation</h3>
         <pre class="prettyprint">
@@ -474,6 +483,8 @@ eggs =
         </pre>
       </div>
       <p style="clear: both"><small>Note: Shapely dependency will be removed in the next release</small></p>
+      </div>
+
       <aside class="presenter-notes">
       </aside>
 
@@ -527,36 +538,38 @@ layer = new OpenLayers.Layer.Google(
 
     <section class="slide">
       <h2>collective.geo.geographer</h2>
-      <div class="left-50 small-font">
-        <p>
-          <ul>
-            <li>based on zgeo.geographer and zgeo.plone.geographer</li>
-            <li>provides the basic mechanism to enter geographic data into georeferenceable contents</li>
-          </ul>
+
+      <div class="row">
+        <div class="left-50 small-font">
+          <p>
+            <ul>
+              <li>based on zgeo.geographer and zgeo.plone.geographer</li>
+              <li>provides the basic mechanism to enter geographic data into georeferenceable contents</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>any object can be georeferenced</p>
+
+        </div>
+        <div class="right-50 small-font">
+
+          <pre class="prettyprint">
+
+  >>> class Placemark(object):
+  ...     implements(
+  ...       IGeoreferenceable,
+  ...       IAttributeAnnotatable
+  ...     )
+
+  >>> placemark = Placemark()
+
+  >>> geo = IGeoreferenced(placemark)
+  >>> geo.setGeoInterface('Point',
+  ...               (-105.08, 40.59))
+          </pre>
         </p>
-        <p></p>
-        <p>any object can be georeferenced</p>
-
+        </div>
       </div>
-      <div class="right-50 small-font">
-
-        <pre class="prettyprint">
-
->>> class Placemark(object):
-...     implements(
-...       IGeoreferenceable,
-...       IAttributeAnnotatable
-...     )
-
->>> placemark = Placemark()
-
->>> geo = IGeoreferenced(placemark)
->>> geo.setGeoInterface('Point',
-...               (-105.08, 40.59))
-        </pre>
-      </p>
-      </div>
-
       <aside class="presenter-notes">
         this is a note!
       </aside>
@@ -648,20 +661,22 @@ layer = new OpenLayers.Layer.Google(
     <section class="slide small-font">
       <h2>collective.geo.contentlocations</h2>
       <p>user interface for georeferencing Archetypes content types</p>
-      <div class="left-40 ">
-        <p>
-          <ul>
-            <li>data can be inserted in WKT format</li>
-            <li>geocoding with geopy</li>
-            <li>it is possible to set customized styles</li>
-          </ul>
-        </p>
-      </div>
 
-      <div class="right-60">
-        <img src="./images/set_coordinates.png" alt="plone.it website"/>
-      </div>
+      <div class="row">
+        <div class="left-40 ">
+          <p>
+            <ul>
+              <li>data can be inserted in WKT format</li>
+              <li>geocoding with geopy</li>
+              <li>it is possible to set customized styles</li>
+            </ul>
+          </p>
+        </div>
 
+        <div class="right-60">
+          <img src="./images/set_coordinates.png" alt="plone.it website"/>
+        </div>
+      </div>
       <aside class="presenter-notes">
       </aside>
 
@@ -710,7 +725,7 @@ layer = new OpenLayers.Layer.Google(
       </footer>
     </section>
 
-   <section class="slide">
+   <section id="more-extensions" class="slide">
       <h1>More extensions</h1>
 
       <aside class="presenter-notes">
@@ -782,24 +797,26 @@ layer = new OpenLayers.Layer.Google(
     <section class="slide">
       <h2>Contributors</h2>
 
-      <div class="left-50">
-      <ul>
-        <li>Sean Gillies</li>
-        <li>Silvio Tomatis - silviot</li>
-        <li>Gerhard Weis - gweis</li>
-        <li>David Breitkreutz - rockdj</li>
-        <li>Makina corpus</li>
-      </ul>
-      </div>
-      <div class="right-50">
-      <ul>
-        <li>Christian Ledermann - nan</li>
-        <li>David Beitey - davidjb</li>
-        <li>Maurizio Delmonte - miziodel</li>
-        <li>Alice Narduzzo</li>
-        <li>Enrico Barra</li>
-      </ul>
+      <div class="row">
+        <div class="left-50">
+        <ul>
+          <li>Sean Gillies</li>
+          <li>Silvio Tomatis - silviot</li>
+          <li>Gerhard Weis - gweis</li>
+          <li>David Breitkreutz - rockdj</li>
+          <li>Makina corpus</li>
+        </ul>
+        </div>
+        <div class="right-50">
+        <ul>
+          <li>Christian Ledermann - nan</li>
+          <li>David Beitey - davidjb</li>
+          <li>Maurizio Delmonte - miziodel</li>
+          <li>Alice Narduzzo</li>
+          <li>Enrico Barra</li>
+        </ul>
 
+        </div>
       </div>
 
       <aside class="presenter-notes">

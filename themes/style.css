@@ -7,27 +7,37 @@
     font-family: "Raleway",sans-serif;
     font-size: 12pt;
     font-weight: normal;
-    line-height: 56px;
+    line-height: 3em;
     vertical-align: bottom;
 }
 
-.left-50 {
-    float: left;
-    width: 50%;
-}
-.right-50 {
-    float: right;
-    width: 50%;
-}
 
 .left-40 {
     float: left;
     width: 40%;
+    display: block;
+    margin: 0;
 }
 
 .right-60 {
     float: right;
     width: 55%;
+    display: block;
+    margin: 0;
+}
+
+.left-50 {
+    display: block;
+    width: 50%;
+    float: left;
+    margin: 0;
+}
+
+.right-50 {
+    display: block;
+    width: 50%;
+    float: right;
+    margin: 0;
 }
 
 .image-full {
@@ -66,24 +76,15 @@
 #flexitopic left-50{
     font-size: 90% !important
 }
-#title-slide h3 {
-    position: relative;
-    margin-top: 0.6em
+
+
+#title-slide {
+    background: url("../images/cgeo256x256.png") no-repeat scroll 0 50% transparent;
 }
 
 #title-slide h1 {
-    background: url("../images/cgeo256x256.png") no-repeat scroll 0 50% transparent;
-    padding-left: 250px;
-    position: relative;
-    top: auto;
-    bottom: auto;
-    -moz-transform: none;
+    text-align: right;
 }
-
-#title-slide {
-    background-image: none;
-}
-
 
 .deck-container .slide h2 {
     color: #004372;
@@ -134,3 +135,11 @@ li.L9 { background: #222 }
     color: white;
     text-shadow: -2px 2px black;
 }
+
+@media print {
+    #title-slide footer,
+    #use-cases footer,
+    #collective-geo-under-the-hood footer,
+    #more-extensions footer {
+        display: none;
+    }
